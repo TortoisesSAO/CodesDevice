@@ -1,0 +1,198 @@
+/**
+ * These arguments were used when this file was generated. They will be automatically applied on subsequent loads
+ * via the GUI or CLI. Run CLI with '--help' for additional information on how to override these arguments.
+ * @cliArgs --board "/ti/boards/CC1312R1_LAUNCHXL" --rtos "tirtos7" --product "simplelink_cc13xx_cc26xx_sdk@6.30.00.84"
+ * @versions {"tool":"1.14.0+2667"}
+ */
+const BOOSTXL_SHARP128 = scripting.addHardware("/ti/boards/boosterpacks/BOOSTXL-SHARP128");
+
+/**
+ * Import the modules used in this configuration.
+ */
+const custom      = scripting.addModule("/ti/devices/radioconfig/custom");
+const rfdesign    = scripting.addModule("/ti/devices/radioconfig/rfdesign");
+const Display     = scripting.addModule("/ti/display/Display");
+const Display1    = Display.addInstance();
+const ADC         = scripting.addModule("/ti/drivers/ADC", {}, false);
+const ADC1        = ADC.addInstance();
+const ADC2        = ADC.addInstance();
+const ADC3        = ADC.addInstance();
+const GPIO        = scripting.addModule("/ti/drivers/GPIO");
+const GPIO6       = GPIO.addInstance();
+const GPIO7       = GPIO.addInstance();
+const GPIO8       = GPIO.addInstance();
+const GPIO9       = GPIO.addInstance();
+const GPIO10      = GPIO.addInstance();
+const I2C         = scripting.addModule("/ti/drivers/I2C", {}, false);
+const I2C1        = I2C.addInstance();
+const I2S         = scripting.addModule("/ti/drivers/I2S", {}, false);
+const I2S1        = I2S.addInstance();
+const SD          = scripting.addModule("/ti/drivers/SD");
+const SD1         = SD.addInstance();
+const SPI         = scripting.addModule("/ti/drivers/SPI", {}, false);
+const SPI1        = SPI.addInstance();
+const Temperature = scripting.addModule("/ti/drivers/Temperature");
+const UART2       = scripting.addModule("/ti/drivers/UART2", {}, false);
+const UART22      = UART2.addInstance();
+const Settings    = scripting.addModule("/ti/posix/tirtos/Settings");
+const BIOS        = scripting.addModule("/ti/sysbios/BIOS");
+const Clock       = scripting.addModule("/ti/sysbios/knl/Clock");
+const Event       = scripting.addModule("/ti/sysbios/knl/Event");
+const Idle        = scripting.addModule("/ti/sysbios/knl/Idle", {}, false);
+const Idle2       = Idle.addInstance();
+const Mailbox     = scripting.addModule("/ti/sysbios/knl/Mailbox");
+const Task        = scripting.addModule("/ti/sysbios/knl/Task");
+const Error       = scripting.addModule("/ti/sysbios/runtime/Error");
+const SysCallback = scripting.addModule("/ti/sysbios/runtime/SysCallback");
+const Timestamp   = scripting.addModule("/ti/sysbios/runtime/Timestamp");
+
+/**
+ * Write custom configuration values to the imported modules.
+ */
+custom.prop1                                          = ["custom169"];
+custom.radioConfigcustom169.$name                     = "ti_devices_radioconfig_settings_prop0";
+custom.radioConfigcustom169.codeExportConfig.$name    = "ti_devices_radioconfig_code_export_param0";
+custom.radioConfigcustom169.codeExportConfig.cpePatch = "rf_patch_cpe_multi_protocol";
+
+rfdesign.fbSub1g = "fb169";
+
+Display1.$name                   = "CONFIG_Display_0";
+Display1.uart.$name              = "CONFIG_UART2_0";
+Display1.uart.uart.$assign       = "UART1";
+Display1.uart.uart.txPin.$assign = "boosterpack.23";
+Display1.uart.uart.rxPin.$assign = "boosterpack.24";
+
+ADC1.$name              = "adc_battery_level";
+ADC1.samplingDuration   = "1.37 ms";
+ADC1.inputScaling       = false;
+ADC1.adc.$assign        = "ADC0";
+ADC1.adc.adcPin.$assign = "boosterpack.26";
+
+ADC2.$name              = "adc_5V_usb";
+ADC2.samplingDuration   = "1.37 ms";
+ADC2.inputScaling       = false;
+ADC2.adc.adcPin.$assign = "boosterpack.28";
+
+ADC3.$name              = "adc_battery_current";
+ADC3.samplingDuration   = "1.37 ms";
+ADC3.inputScaling       = false;
+ADC3.adc.$assign        = "ADC0";
+ADC3.adc.adcPin.$assign = "boosterpack.27";
+
+GPIO6.$name           = "gpio_on_sd";
+GPIO6.mode            = "Output";
+GPIO6.outputStrength  = "Low";
+GPIO6.gpioPin.$assign = "boosterpack.18";
+scripting.suppress("Connected to hardware,@@@.+?@@@ is connected to LaunchPad SPI Bus Chip Select on the CC1312R1 LaunchPad\\. Consider selecting it in 'use hardware' above\\. @@@.+?@@@", GPIO6, "gpioPin");
+
+GPIO7.$name           = "gpio_on_gps";
+GPIO7.mode            = "Output";
+GPIO7.outputStrength  = "Low";
+GPIO7.gpioPin.$assign = "boosterpack.38";
+scripting.suppress("Connected to hardware,@@@.+?@@@ is connected to MX25R8035F SPI Flash Chip Select on the CC1312R1 LaunchPad\\. Consider selecting it in 'use hardware' above\\. @@@.+?@@@", GPIO7, "gpioPin");
+
+GPIO8.$name           = "gpio_led_status0";
+GPIO8.mode            = "Output";
+GPIO8.outputStrength  = "Low";
+GPIO8.gpioPin.$assign = "boosterpack.37";
+
+GPIO9.$name              = "gpio_led_status1";
+GPIO9.mode               = "Output";
+GPIO9.outputStrength     = "Low";
+GPIO9.initialOutputState = "High";
+GPIO9.gpioPin.$assign    = "boosterpack.36";
+
+GPIO10.$name           = "gpio_led_status2";
+GPIO10.mode            = "Output";
+GPIO10.outputStrength  = "Low";
+GPIO10.gpioPin.$assign = "boosterpack.31";
+
+I2C1.$name              = "i2c_imu";
+I2C1.maxBitRate         = 1;
+I2C1.i2c.$assign        = "I2C0";
+I2C1.i2c.sdaPin.$assign = "boosterpack.9";
+I2C1.i2c.sclPin.$assign = "boosterpack.10";
+
+I2S1.$name                = "i2s_mic";
+I2S1.i2s.SD0Pin.$assign   = "boosterpack.40";
+I2S1.i2s.SCKPin.$assign   = "boosterpack.14";
+I2S1.i2s.WSPin.$assign    = "boosterpack.39";
+I2S1.sd0PinInstance.$name = "CONFIG_GPIO_1";
+I2S1.sd1PinInstance.$name = "CONFIG_GPIO_2";
+I2S1.sckPinInstance.$name = "CONFIG_GPIO_3";
+I2S1.wsPinInstance.$name  = "CONFIG_GPIO_4";
+scripting.suppress("Connected to hardware,@@@.+?@@@ is connected to LaunchPad LED Green on the CC1312R1 LaunchPad\\. Consider selecting it in 'use hardware' above\\. @@@.+?@@@", I2S1.i2s, "SD0Pin");
+scripting.suppress("Connected to hardware,@@@.+?@@@ is connected to LaunchPad SPI Bus on the CC1312R1 LaunchPad\\. Consider selecting it in 'use hardware' above\\. @@@.+?@@@", I2S1.i2s, "SCKPin");
+scripting.suppress("Connected to hardware,@@@.+?@@@ is connected to LaunchPad LED Red on the CC1312R1 LaunchPad\\. Consider selecting it in 'use hardware' above\\. @@@.+?@@@", I2S1.i2s, "WSPin");
+
+const CCFG              = scripting.addModule("/ti/devices/CCFG", {}, false);
+CCFG.ccfgTemplate.$name = "ti_devices_CCFG_CCFGCC26XXTemplate0";
+
+SD1.useFatFS                   = true;
+SD1.$name                      = "spi_sd";
+SD1.sdSSPin.$assign            = "boosterpack.11";
+SD1.slaveSelect.$name          = "CONFIG_GPIO_0";
+SD1.slaveSelect.outputStrength = "Low";
+
+SPI1.$name               = "CONFIG_SPI_0";
+SD1.spiInstance          = SPI1;
+SPI1.spi.$assign         = "SSI0";
+SPI1.spi.sclkPin.$assign = "boosterpack.13";
+SPI1.spi.misoPin.$assign = "boosterpack.19";
+SPI1.spi.mosiPin.$assign = "boosterpack.12";
+scripting.suppress("Connected to hardware,@@@.+?@@@ is connected to LaunchPad Button BTN-1 \\(Left\\) on the CC1312R1 LaunchPad\\. Consider selecting it in 'use hardware' above\\. @@@.+?@@@", SPI1.spi, "sclkPin");
+scripting.suppress("Connected to hardware,@@@.+?@@@ is connected to LaunchPad Button BTN-2 \\(Right\\) on the CC1312R1 LaunchPad\\. Consider selecting it in 'use hardware' above\\. @@@.+?@@@", SPI1.spi, "mosiPin");
+
+UART22.$name                    = "uart_mu1";
+UART22.rxInterruptFifoThreshold = "2/8";
+UART22.rxRingBufferSize         = 60;
+UART22.uart.$assign             = "UART0";
+UART22.uart.txPin.$assign       = "boosterpack.8";
+UART22.uart.rxPin.$assign       = "boosterpack.5";
+scripting.suppress("Connected to hardware,@@@.+?@@@ is connected to BOOSTXL-SHARP128 SD SPI Chip Select on the CC1312R1 LaunchPad\\. Consider selecting it in 'use hardware' above\\. @@@.+?@@@", UART22.uart, "txPin");
+scripting.suppress("Connected to hardware,@@@.+?@@@ is connected to Sharp128 LCD Enable on the CC1312R1 LaunchPad\\. Consider selecting it in 'use hardware' above\\. @@@.+?@@@", UART22.uart, "rxPin");
+
+BIOS.assertsEnabled = false;
+BIOS.heapBaseAddr   = "__primary_heap_start__";
+BIOS.heapEndAddr    = "__primary_heap_end__";
+
+const Hwi           = scripting.addModule("/ti/sysbios/family/arm/m3/Hwi", {}, false);
+Hwi.enableException = false;
+
+Clock.tickPeriod = 200;
+
+const Timer = scripting.addModule("/ti/sysbios/family/arm/cc26xx/Timer", {}, false);
+
+Idle2.$name   = "powerIdle";
+Idle2.idleFxn = "Power_idleFunc";
+
+const Semaphore            = scripting.addModule("/ti/sysbios/knl/Semaphore", {}, false);
+Semaphore.supportsPriority = false;
+
+const Swi         = scripting.addModule("/ti/sysbios/knl/Swi", {}, false);
+Swi.numPriorities = 6;
+
+Task.checkStackFlag    = false;
+Task.idleTaskStackSize = 2048;
+Task.defaultStackSize  = 4072;
+
+Error.policy       = "Error_SPIN";
+Error.printDetails = false;
+
+const System           = scripting.addModule("/ti/sysbios/runtime/System", {}, false);
+System.abortFxn        = "System_abortSpin";
+System.exitFxn         = "System_exitSpin";
+System.extendedFormats = "%f";
+System.supportModule   = "SysCallback";
+
+/**
+ * Pinmux solution for unlocked pins/peripherals. This ensures that minor changes to the automatic solver in a future
+ * version of the tool will not impact the pinmux you originally saw.  These lines can be completely deleted in order to
+ * re-solve from scratch.
+ */
+ADC2.adc.$suggestSolution              = "ADC0";
+I2S1.i2s.$suggestSolution              = "I2S0";
+I2S1.i2s.SD1Pin.$suggestSolution       = "boosterpack.30";
+SPI1.spi.dmaRxChannel.$suggestSolution = "DMA_CH3";
+SPI1.spi.dmaTxChannel.$suggestSolution = "DMA_CH4";
+Timer.rtc.$suggestSolution             = "RTC0";
