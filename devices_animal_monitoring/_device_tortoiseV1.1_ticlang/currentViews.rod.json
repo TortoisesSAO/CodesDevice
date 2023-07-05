@@ -1,0 +1,1017 @@
+[
+	{
+		"module": "ti.sysbios.knl.Clock",
+		"view": "Basic"
+	},
+	{
+		"elements": [
+			{
+				"address": "0x2000e684",
+				"symbol": "",
+				"timeout": "51",
+				"period": "0",
+				"fxn": "emptyClockFunc",
+				"arg": "0x0",
+				"started": "false",
+				"tRemaining": null,
+				"periodic": "false"
+			},
+			{
+				"address": "0x2000e6c8",
+				"symbol": "",
+				"timeout": "8",
+				"period": "0",
+				"fxn": "PowerCC26X2_RCOSC_clockFunc",
+				"arg": "0x0",
+				"started": "false",
+				"tRemaining": null,
+				"periodic": "false"
+			},
+			{
+				"address": "0x200039c0",
+				"symbol": "",
+				"timeout": "4294967294",
+				"period": "0",
+				"fxn": "ti_sysbios_knl_Semaphore_pendTimeout",
+				"arg": "0x200039e4",
+				"started": "true",
+				"tRemaining": "4291053692",
+				"periodic": "false"
+			},
+			{
+				"address": "0x200025d8",
+				"symbol": "",
+				"timeout": "4294967294",
+				"period": "0",
+				"fxn": "ti_sysbios_knl_Semaphore_pendTimeout",
+				"arg": "0x200025fc",
+				"started": "true",
+				"tRemaining": "4294948937",
+				"periodic": "false"
+			},
+			{
+				"address": "0x200055c4",
+				"symbol": "",
+				"timeout": "30000",
+				"period": "0",
+				"fxn": "ti_sysbios_knl_Task_sleepTimeout",
+				"arg": "0x200055e8",
+				"started": "true",
+				"tRemaining": "16273",
+				"periodic": "false"
+			},
+			{
+				"address": "0x20002ddc",
+				"symbol": "",
+				"timeout": "59996",
+				"period": "0",
+				"fxn": "ti_sysbios_knl_Task_sleepTimeout",
+				"arg": "0x20002e00",
+				"started": "true",
+				"tRemaining": "46273",
+				"periodic": "false"
+			},
+			{
+				"address": "0x200047a4",
+				"symbol": "",
+				"timeout": "59852",
+				"period": "0",
+				"fxn": "ti_sysbios_knl_Task_sleepTimeout",
+				"arg": "0x200047c8",
+				"started": "true",
+				"tRemaining": "46273",
+				"periodic": "false"
+			},
+			{
+				"address": "0x20003fa4",
+				"symbol": "",
+				"timeout": "2470",
+				"period": "0",
+				"fxn": "ti_sysbios_knl_Task_sleepTimeout",
+				"arg": "0x20003fc8",
+				"started": "true",
+				"tRemaining": "1273",
+				"periodic": "false"
+			},
+			{
+				"address": "0x20006180",
+				"symbol": "",
+				"timeout": "1000",
+				"period": "0",
+				"fxn": "ti_sysbios_knl_Semaphore_pendTimeout",
+				"arg": "0x200061a4",
+				"started": "true",
+				"tRemaining": "88",
+				"periodic": "false"
+			},
+			{
+				"address": "0x20004dc4",
+				"symbol": "",
+				"timeout": "1061",
+				"period": "0",
+				"fxn": "ti_sysbios_knl_Task_sleepTimeout",
+				"arg": "0x20004de8",
+				"started": "true",
+				"tRemaining": "309",
+				"periodic": "false"
+			},
+			{
+				"address": "0x200069b0",
+				"symbol": "",
+				"timeout": "4294967294",
+				"period": "0",
+				"fxn": "ti_sysbios_knl_Semaphore_pendTimeout",
+				"arg": "0x200069d4",
+				"started": "true",
+				"tRemaining": "4294966542",
+				"periodic": "false"
+			},
+			{
+				"address": "0x200051c4",
+				"symbol": "",
+				"timeout": "100",
+				"period": "0",
+				"fxn": "ti_sysbios_knl_Task_sleepTimeout",
+				"arg": "0x200051e8",
+				"started": "true",
+				"tRemaining": "88",
+				"periodic": "false"
+			}
+		]
+	}
+]
+
+[
+	{
+		"module": "ti.sysbios.heaps.HeapCallback",
+		"view": "Basic"
+	},
+	{}
+]
+
+[
+	{
+		"module": "ti.sysbios.knl.Idle",
+		"view": "Idle.funcList"
+	},
+	{
+		"elements": [
+			{
+				"index": "0",
+				"fxn": "_pthread_cleanupFxn"
+			},
+			{
+				"index": "1",
+				"fxn": "Power_idleFunc"
+			},
+			{
+				"index": "2",
+				"fxn": "ti_sysbios_family_arm_m3_Hwi_checkStack"
+			}
+		]
+	}
+]
+
+[
+	{
+		"module": "xdc.runtime.System",
+		"view": "XDCPATH"
+	},
+	{
+		"elements": [
+			{
+				"entry": "The paths to the repositories which are currently being used to run ROV."
+			},
+			{
+				"entry": ""
+			},
+			{
+				"entry": "C:/ti/simplelink_cc13xx_cc26xx_sdk_6_30_00_84/."
+			},
+			{
+				"entry": "${XDCROOT}/packages"
+			},
+			{
+				"entry": "C:/ti/simplelink_cc13xx_cc26xx_sdk_6_30_00_84/source"
+			},
+			{
+				"entry": "C:/ti/simplelink_cc13xx_cc26xx_sdk_6_30_00_84/kernel/tirtos/packages"
+			},
+			{
+				"entry": "C:/ti/simplelink_cc13xx_cc26xx_sdk_6_30_00_84/kernel/tirtos7/packages"
+			},
+			{
+				"entry": "C:/ti/simplelink_cc13xx_cc26xx_sdk_6_30_00_84"
+			},
+			{
+				"entry": "C:\\ti\\ccs1040\\xdctools_3_62_01_15_core/packages"
+			}
+		]
+	}
+]
+
+[
+	{
+		"module": "ti.sysbios.knl.Task",
+		"view": "Detailed"
+	},
+	{
+		"elements": [
+			{
+				"address": "0x2000a9ac",
+				"symbol": "ti_sysbios_knl_Idle_taskStruct",
+				"name": "ti.sysbios.knl.Task.IdleTask",
+				"priority": "0",
+				"mode": "Running",
+				"fxn": "ti_sysbios_knl_Idle_loop",
+				"arg0": "0x0",
+				"arg1": "0x0",
+				"stackPeak": "312",
+				"stackSize": "2048",
+				"stackBase": "0x20008bf8",
+				"blockedOn": null
+			},
+			{
+				"address": "0x20010010",
+				"symbol": "",
+				"name": null,
+				"priority": "14",
+				"mode": "Blocked",
+				"fxn": "task_spi0_microsd",
+				"arg0": "0x43e1",
+				"arg1": "0x2000ffc0",
+				"stackPeak": "820",
+				"stackSize": "3072",
+				"stackBase": "0x20001a50",
+				"blockedOn": "Semaphore: 0x2000fbbc"
+			},
+			{
+				"address": "0x200100b8",
+				"symbol": "",
+				"name": null,
+				"priority": "5",
+				"mode": "Blocked",
+				"fxn": "task_adc0_sysmonitor",
+				"arg0": "0x25cd",
+				"arg1": "0x20010068",
+				"stackPeak": "796",
+				"stackSize": "2048",
+				"stackBase": "0x20002650",
+				"blockedOn": "Task_sleep(46273)"
+			},
+			{
+				"address": "0x20010160",
+				"symbol": "",
+				"name": null,
+				"priority": "1",
+				"mode": "Blocked",
+				"fxn": "task_uart0_printu",
+				"arg0": "0xd2c9",
+				"arg1": "0x20010110",
+				"stackPeak": "356",
+				"stackSize": "3048",
+				"stackBase": "0x20002e50",
+				"blockedOn": "Semaphore: 0x2000f908"
+			},
+			{
+				"address": "0x20010208",
+				"symbol": "",
+				"name": null,
+				"priority": "11",
+				"mode": "Blocked",
+				"fxn": "task_rfsub1ghz_ka",
+				"arg0": "0x6a51",
+				"arg1": "0x200101b8",
+				"stackPeak": "920",
+				"stackSize": "2048",
+				"stackBase": "0x20003a38",
+				"blockedOn": "Task_sleep(1273)"
+			},
+			{
+				"address": "0x200102b0",
+				"symbol": "",
+				"name": null,
+				"priority": "10",
+				"mode": "Blocked",
+				"fxn": "task_rfsub1ghz_tx_data",
+				"arg0": "0x58e1",
+				"arg1": "0x20010260",
+				"stackPeak": "868",
+				"stackSize": "2048",
+				"stackBase": "0x20004238",
+				"blockedOn": "Task_sleep(46273)"
+			},
+			{
+				"address": "0x20010358",
+				"symbol": "",
+				"name": null,
+				"priority": "13",
+				"mode": "Blocked",
+				"fxn": "task_i2c0_imu_accgyro",
+				"arg0": "0x3809",
+				"arg1": "0x20010308",
+				"stackPeak": "800",
+				"stackSize": "1024",
+				"stackBase": "0x20004a38",
+				"blockedOn": "Task_sleep(309)"
+			},
+			{
+				"address": "0x20010400",
+				"symbol": "",
+				"name": null,
+				"priority": "13",
+				"mode": "Blocked",
+				"fxn": "task_i2c0_imu_mag",
+				"arg0": "0x6595",
+				"arg1": "0x200103b0",
+				"stackPeak": "464",
+				"stackSize": "1024",
+				"stackBase": "0x20004e38",
+				"blockedOn": "Task_sleep(88)"
+			},
+			{
+				"address": "0x200104a8",
+				"symbol": "",
+				"name": null,
+				"priority": "6",
+				"mode": "Blocked",
+				"fxn": "task_temperature",
+				"arg0": "0x66c5",
+				"arg1": "0x20010458",
+				"stackPeak": "392",
+				"stackSize": "1024",
+				"stackBase": "0x20005238",
+				"blockedOn": "Task_sleep(16273)"
+			},
+			{
+				"address": "0x20010550",
+				"symbol": "",
+				"name": null,
+				"priority": "12",
+				"mode": "Blocked",
+				"fxn": "task_uart0_gps",
+				"arg0": "0x2839",
+				"arg1": "0x20010500",
+				"stackPeak": "976",
+				"stackSize": "3048",
+				"stackBase": "0x20005638",
+				"blockedOn": "Semaphore: 0x2000f82c"
+			},
+			{
+				"address": "0x200105f8",
+				"symbol": "",
+				"name": null,
+				"priority": "1",
+				"mode": "Blocked",
+				"fxn": "task_animal_activity",
+				"arg0": "0xc5fd",
+				"arg1": "0x200105a8",
+				"stackPeak": "344",
+				"stackSize": "2048",
+				"stackBase": "0x20006220",
+				"blockedOn": "Semaphore: 0x2000f41c"
+			}
+		]
+	}
+]
+
+[
+	{
+		"module": "ti.sysbios.heaps.HeapTrack",
+		"view": "Basic"
+	},
+	{}
+]
+
+[
+	{
+		"module": "ti.sysbios.family.arm.m3.Hwi",
+		"view": "Basic"
+	},
+	{
+		"elements": [
+			{
+				"handle": "0x2000aea8",
+				"name": "gpioHwi",
+				"type": "Dispatched",
+				"intNum": "16",
+				"priority": "0xe0e0",
+				"group": "1799",
+				"subPriority": "0",
+				"fxn": "GPIO_hwiIntFxn",
+				"arg": "0x0"
+			},
+			{
+				"handle": "0x2000a918",
+				"name": "",
+				"type": "Dispatched",
+				"intNum": "20",
+				"priority": "0x-1fff1f20",
+				"group": "-16775417",
+				"subPriority": "0",
+				"fxn": "ti_sysbios_family_arm_cc26xx_Timer_dynamicStub",
+				"arg": "0x2000a8f0"
+			},
+			{
+				"handle": "0x2000ae70",
+				"name": "",
+				"type": "Dispatched",
+				"intNum": "41",
+				"priority": "0x0",
+				"group": "0",
+				"subPriority": "0",
+				"fxn": "UDMACC26XX_hwiIntFxn",
+				"arg": "0x16a40"
+			},
+			{
+				"handle": "0x2000e76c",
+				"name": "",
+				"type": "Dispatched",
+				"intNum": "44",
+				"priority": "0xe0",
+				"group": "7",
+				"subPriority": "0",
+				"fxn": "PowerCC26X2_auxISR",
+				"arg": "0x0"
+			},
+			{
+				"handle": "0x2000e750",
+				"name": "",
+				"type": "Dispatched",
+				"intNum": "50",
+				"priority": "0x0",
+				"group": "0",
+				"subPriority": "0",
+				"fxn": "oscillatorISR",
+				"arg": "0x0"
+			},
+			{
+				"handle": "0x2000940c",
+				"name": "",
+				"type": "Dispatched",
+				"intNum": "52",
+				"priority": "0xe0e0",
+				"group": "1799",
+				"subPriority": "0",
+				"fxn": "UART2CC26X2_hwiIntFxn",
+				"arg": "0x16854"
+			},
+			{
+				"handle": "0x2000ae8c",
+				"name": "batmonHwi",
+				"type": "Dispatched",
+				"intNum": "53",
+				"priority": "0x0",
+				"group": "0",
+				"subPriority": "0",
+				"fxn": "temperatureHwiFxn",
+				"arg": "0x0"
+			}
+		]
+	}
+]
+
+[
+	{
+		"module": "ti.sysbios.family.arm.cc26xx.Timer (RTC)",
+		"view": "Basic"
+	},
+	{
+		"elements": [
+			{
+				"address": "0x2000a8f0",
+				"symbol": "ti_sysbios_knl_ClockSupport_timerStruct",
+				"id": "0",
+				"device": "RTC",
+				"intNum": "20",
+				"startMode": "StartMode_AUTO",
+				"tickFxn": "ti_sysbios_knl_Clock_tick",
+				"arg": "0",
+				"hwiHandle": "0x2000a918"
+			}
+		]
+	}
+]
+
+[
+	{
+		"module": "ti.sysbios.knl.Mailbox",
+		"view": "Basic"
+	},
+	{}
+]
+
+[
+	{
+		"module": "ti.sysbios.knl.Event",
+		"view": "Basic"
+	},
+	{}
+]
+
+[
+	{
+		"module": "ti.sysbios.heaps.HeapMem",
+		"view": "Basic"
+	},
+	{
+		"elements": [
+			{
+				"address": "0x2000ac04",
+				"symbol": "BIOS_heapMemObject",
+				"buf": "0x2000ffc0",
+				"minBlockAlign": "8"
+			}
+		]
+	}
+]
+
+[
+	{
+		"module": "xdc.rov.runtime.Monitor",
+		"view": "Module"
+	},
+	{
+		"address": "0xNaN",
+		"command": null,
+		"readFxn": null,
+		"writeFxn": null
+	}
+]
+
+[
+	{
+		"module": "ti.sysbios.knl.Idle",
+		"view": "Idle.funcList"
+	},
+	{
+		"elements": [
+			{
+				"index": "0",
+				"fxn": "_pthread_cleanupFxn"
+			},
+			{
+				"index": "1",
+				"fxn": "Power_idleFunc"
+			},
+			{
+				"index": "2",
+				"fxn": "ti_sysbios_family_arm_m3_Hwi_checkStack"
+			}
+		]
+	}
+]
+
+[
+	{
+		"module": "xdc.runtime.System",
+		"view": "Raw"
+	},
+	{
+		"Module State": null,
+		"Instance States": [],
+		"Module Configuration Parameters": {
+			"$category": "Module",
+			"$name": "xdc.runtime.System",
+			"A_cannotFitIntoArg": {
+				"$category": "Struct",
+				"$name": "xdc.runtime.Assert.Desc#7",
+				"mask": "16",
+				"msg": "A_cannotFitIntoArg: sizeof(Float) > sizeof(Arg)"
+			},
+			"Module_GateProxy": {
+				"$category": "Module",
+				"$name": "xdc.runtime.GateNull",
+				"Module__diagsEnabled": "16",
+				"Module__diagsIncluded": "16",
+				"Module__diagsMask": null,
+				"Module__gateObj": null,
+				"Module__gatePrms": null,
+				"Module__id": "32776",
+				"Module__loggerDefined": false,
+				"Module__loggerFxn0": null,
+				"Module__loggerFxn1": null,
+				"Module__loggerFxn2": null,
+				"Module__loggerFxn4": null,
+				"Module__loggerFxn8": null,
+				"Module__loggerObj": null,
+				"Object__count": "0",
+				"Object__heap": null,
+				"Object__sizeof": "0",
+				"Object__table": null,
+				"Q_BLOCKING": "1",
+				"Q_PREEMPTING": "2",
+				"common$": {
+					"$category": "Struct",
+					"$name": "xdc.runtime.GateNull/common$",
+					"diags_ANALYSIS": "xdc.runtime.Diags.ALWAYS_OFF",
+					"diags_ASSERT": "xdc.runtime.Diags.ALWAYS_ON",
+					"diags_ENTRY": "xdc.runtime.Diags.ALWAYS_OFF",
+					"diags_EXIT": "xdc.runtime.Diags.ALWAYS_OFF",
+					"diags_INFO": "xdc.runtime.Diags.ALWAYS_OFF",
+					"diags_INTERNAL": "xdc.runtime.Diags.ALWAYS_OFF",
+					"diags_LIFECYCLE": "xdc.runtime.Diags.ALWAYS_OFF",
+					"diags_STATUS": "xdc.runtime.Diags.ALWAYS_OFF",
+					"diags_USER1": "xdc.runtime.Diags.ALWAYS_OFF",
+					"diags_USER2": "xdc.runtime.Diags.ALWAYS_OFF",
+					"diags_USER3": "xdc.runtime.Diags.ALWAYS_OFF",
+					"diags_USER4": "xdc.runtime.Diags.ALWAYS_OFF",
+					"diags_USER5": "xdc.runtime.Diags.ALWAYS_OFF",
+					"diags_USER6": "xdc.runtime.Diags.ALWAYS_OFF",
+					"diags_USER7": "xdc.runtime.Diags.ALWAYS_OFF",
+					"diags_USER8": "xdc.runtime.Diags.ALWAYS_OFF",
+					"fxntab": true,
+					"gate": null,
+					"gateParams": null,
+					"instanceHeap": null,
+					"instanceSection": null,
+					"logger": null,
+					"memoryPolicy": "xdc.runtime.Types.DELETE_POLICY",
+					"namedInstance": false,
+					"namedModule": true,
+					"outPolicy": "xdc.runtime.Types.COMMON_FILE",
+					"romPatchTable": false
+				}
+			},
+			"Module__diagsEnabled": "16",
+			"Module__diagsIncluded": "16",
+			"Module__diagsMask": null,
+			"Module__gateObj": null,
+			"Module__gatePrms": null,
+			"Module__id": "32783",
+			"Module__loggerDefined": false,
+			"Module__loggerFxn0": null,
+			"Module__loggerFxn1": null,
+			"Module__loggerFxn2": null,
+			"Module__loggerFxn4": null,
+			"Module__loggerFxn8": null,
+			"Module__loggerObj": null,
+			"Object__count": "0",
+			"Object__heap": null,
+			"Object__sizeof": "0",
+			"Object__table": null,
+			"STATUS_UNKNOWN": "51966",
+			"SupportProxy": {
+				"$category": "Module",
+				"$name": "xdc.runtime.SysMin",
+				"Module__diagsEnabled": "16",
+				"Module__diagsIncluded": "16",
+				"Module__diagsMask": null,
+				"Module__gateObj": null,
+				"Module__gatePrms": null,
+				"Module__id": "32784",
+				"Module__loggerDefined": false,
+				"Module__loggerFxn0": null,
+				"Module__loggerFxn1": null,
+				"Module__loggerFxn2": null,
+				"Module__loggerFxn4": null,
+				"Module__loggerFxn8": null,
+				"Module__loggerObj": null,
+				"Object__count": "0",
+				"Object__heap": null,
+				"Object__sizeof": "0",
+				"Object__table": null,
+				"bufSize": "1024",
+				"common$": {
+					"$category": "Struct",
+					"$name": "xdc.runtime.SysMin/common$",
+					"diags_ANALYSIS": "xdc.runtime.Diags.ALWAYS_OFF",
+					"diags_ASSERT": "xdc.runtime.Diags.ALWAYS_ON",
+					"diags_ENTRY": "xdc.runtime.Diags.ALWAYS_OFF",
+					"diags_EXIT": "xdc.runtime.Diags.ALWAYS_OFF",
+					"diags_INFO": "xdc.runtime.Diags.ALWAYS_OFF",
+					"diags_INTERNAL": "xdc.runtime.Diags.ALWAYS_OFF",
+					"diags_LIFECYCLE": "xdc.runtime.Diags.ALWAYS_OFF",
+					"diags_STATUS": "xdc.runtime.Diags.ALWAYS_OFF",
+					"diags_USER1": "xdc.runtime.Diags.ALWAYS_OFF",
+					"diags_USER2": "xdc.runtime.Diags.ALWAYS_OFF",
+					"diags_USER3": "xdc.runtime.Diags.ALWAYS_OFF",
+					"diags_USER4": "xdc.runtime.Diags.ALWAYS_OFF",
+					"diags_USER5": "xdc.runtime.Diags.ALWAYS_OFF",
+					"diags_USER6": "xdc.runtime.Diags.ALWAYS_OFF",
+					"diags_USER7": "xdc.runtime.Diags.ALWAYS_OFF",
+					"diags_USER8": "xdc.runtime.Diags.ALWAYS_OFF",
+					"fxntab": true,
+					"gate": null,
+					"gateParams": null,
+					"instanceHeap": null,
+					"instanceSection": null,
+					"logger": null,
+					"memoryPolicy": "xdc.runtime.Types.DELETE_POLICY",
+					"namedInstance": false,
+					"namedModule": true,
+					"outPolicy": "xdc.runtime.Types.COMMON_FILE",
+					"romPatchTable": false
+				},
+				"flushAtExit": true,
+				"outputFunc": "&xdc_runtime_SysMin_output__I",
+				"outputFxn": null,
+				"rovViewInfo": {
+					"$category": "Instance",
+					"$name": "xdc.rov.ViewInfo.Instance#6",
+					"argsMap": {
+						"$category": "Map",
+						"$name": "xdc.rov.ViewInfo.Instance#6/argsMap"
+					},
+					"showRawTab": true,
+					"viewMap": [
+						{
+							"$category": "Struct",
+							"$name": "xdc.rov.ViewInfo.Instance#6/viewMap/'Module'",
+							"argsName": null,
+							"structName": "ModuleView",
+							"type": "xdc.rov.ViewInfo.MODULE",
+							"viewInitFxn": "viewInitModule"
+						},
+						{
+							"$category": "Struct",
+							"$name": "xdc.rov.ViewInfo.Instance#6/viewMap/'OutputBuffer'",
+							"argsName": null,
+							"structName": "BufferEntryView",
+							"type": "xdc.rov.ViewInfo.MODULE_DATA",
+							"viewInitFxn": "viewInitOutputBuffer"
+						}
+					]
+				},
+				"sectionName": null
+			},
+			"abortFxn": "&xdc_runtime_System_abortStd__E",
+			"common$": {
+				"$category": "Struct",
+				"$name": "xdc.runtime.System/common$",
+				"diags_ANALYSIS": "xdc.runtime.Diags.ALWAYS_OFF",
+				"diags_ASSERT": "xdc.runtime.Diags.ALWAYS_ON",
+				"diags_ENTRY": "xdc.runtime.Diags.ALWAYS_OFF",
+				"diags_EXIT": "xdc.runtime.Diags.ALWAYS_OFF",
+				"diags_INFO": "xdc.runtime.Diags.ALWAYS_OFF",
+				"diags_INTERNAL": "xdc.runtime.Diags.ALWAYS_OFF",
+				"diags_LIFECYCLE": "xdc.runtime.Diags.ALWAYS_OFF",
+				"diags_STATUS": "xdc.runtime.Diags.ALWAYS_OFF",
+				"diags_USER1": "xdc.runtime.Diags.ALWAYS_OFF",
+				"diags_USER2": "xdc.runtime.Diags.ALWAYS_OFF",
+				"diags_USER3": "xdc.runtime.Diags.ALWAYS_OFF",
+				"diags_USER4": "xdc.runtime.Diags.ALWAYS_OFF",
+				"diags_USER5": "xdc.runtime.Diags.ALWAYS_OFF",
+				"diags_USER6": "xdc.runtime.Diags.ALWAYS_OFF",
+				"diags_USER7": "xdc.runtime.Diags.ALWAYS_OFF",
+				"diags_USER8": "xdc.runtime.Diags.ALWAYS_OFF",
+				"fxntab": true,
+				"gate": null,
+				"gateParams": null,
+				"instanceHeap": null,
+				"instanceSection": null,
+				"logger": null,
+				"memoryPolicy": "xdc.runtime.Types.DELETE_POLICY",
+				"namedInstance": false,
+				"namedModule": true,
+				"outPolicy": "xdc.runtime.Types.COMMON_FILE",
+				"romPatchTable": false
+			},
+			"exitFxn": "&xdc_runtime_System_exitStd__E",
+			"exitFxns": {
+				"$category": "Vector",
+				"$name": "xdc.runtime.System/exitFxns"
+			},
+			"extendFxn": "&xdc_runtime_System_printfExtend__I",
+			"extendedFormats": "%$L%$S%$F",
+			"maxAtexitHandlers": "8",
+			"rovViewInfo": {
+				"$category": "Instance",
+				"$name": "xdc.rov.ViewInfo.Instance#5",
+				"argsMap": {
+					"$category": "Map",
+					"$name": "xdc.rov.ViewInfo.Instance#5/argsMap"
+				},
+				"showRawTab": true,
+				"viewMap": [
+					{
+						"$category": "Struct",
+						"$name": "xdc.rov.ViewInfo.Instance#5/viewMap/'XDCROOT'",
+						"argsName": null,
+						"structName": "PathEntryView",
+						"type": "xdc.rov.ViewInfo.MODULE_DATA",
+						"viewInitFxn": "viewInitXdcRoot"
+					},
+					{
+						"$category": "Struct",
+						"$name": "xdc.rov.ViewInfo.Instance#5/viewMap/'XDCPATH'",
+						"argsName": null,
+						"structName": "PathEntryView",
+						"type": "xdc.rov.ViewInfo.MODULE_DATA",
+						"viewInitFxn": "viewInitXdcPath"
+					}
+				]
+			}
+		}
+	}
+]
+
+[
+	{
+		"module": "ti.sysbios.heaps.HeapBuf",
+		"view": "Basic"
+	},
+	{}
+]
+
+[
+	{
+		"module": "ti.sysbios.family.arm.m3.Hwi",
+		"view": "Basic"
+	},
+	{
+		"elements": [
+			{
+				"handle": "0x2000aea8",
+				"name": "gpioHwi",
+				"type": "Dispatched",
+				"intNum": "16",
+				"priority": "0xe0e0",
+				"group": "1799",
+				"subPriority": "0",
+				"fxn": "GPIO_hwiIntFxn",
+				"arg": "0x0"
+			},
+			{
+				"handle": "0x2000a918",
+				"name": "",
+				"type": "Dispatched",
+				"intNum": "20",
+				"priority": "0x-1fff1f20",
+				"group": "-16775417",
+				"subPriority": "0",
+				"fxn": "ti_sysbios_family_arm_cc26xx_Timer_dynamicStub",
+				"arg": "0x2000a8f0"
+			},
+			{
+				"handle": "0x2000ae70",
+				"name": "",
+				"type": "Dispatched",
+				"intNum": "41",
+				"priority": "0x0",
+				"group": "0",
+				"subPriority": "0",
+				"fxn": "UDMACC26XX_hwiIntFxn",
+				"arg": "0x16a40"
+			},
+			{
+				"handle": "0x2000e76c",
+				"name": "",
+				"type": "Dispatched",
+				"intNum": "44",
+				"priority": "0xe0",
+				"group": "7",
+				"subPriority": "0",
+				"fxn": "PowerCC26X2_auxISR",
+				"arg": "0x0"
+			},
+			{
+				"handle": "0x2000e750",
+				"name": "",
+				"type": "Dispatched",
+				"intNum": "50",
+				"priority": "0x0",
+				"group": "0",
+				"subPriority": "0",
+				"fxn": "oscillatorISR",
+				"arg": "0x0"
+			},
+			{
+				"handle": "0x2000940c",
+				"name": "",
+				"type": "Dispatched",
+				"intNum": "52",
+				"priority": "0xe0e0",
+				"group": "1799",
+				"subPriority": "0",
+				"fxn": "UART2CC26X2_hwiIntFxn",
+				"arg": "0x16854"
+			},
+			{
+				"handle": "0x2000ae8c",
+				"name": "batmonHwi",
+				"type": "Dispatched",
+				"intNum": "53",
+				"priority": "0x0",
+				"group": "0",
+				"subPriority": "0",
+				"fxn": "temperatureHwiFxn",
+				"arg": "0x0"
+			}
+		]
+	}
+]
+
+[
+	{
+		"module": "ti.sysbios.knl.Idle",
+		"view": "Idle.funcList"
+	},
+	{
+		"elements": [
+			{
+				"index": "0",
+				"fxn": "_pthread_cleanupFxn"
+			},
+			{
+				"index": "1",
+				"fxn": "Power_idleFunc"
+			},
+			{
+				"index": "2",
+				"fxn": "ti_sysbios_family_arm_m3_Hwi_checkStack"
+			}
+		]
+	}
+]
+
+[
+	{
+		"module": "ti.sysbios.BIOS",
+		"view": "Module"
+	},
+	{
+		"elements": [
+			{
+				"currentThreadType": "Main",
+				"rtsGateType": "GateMutex",
+				"cpuFreqLow": "48000000",
+				"cpuFreqHigh": "0",
+				"disableClock": null,
+				"disableSwi": null,
+				"disableTask": null,
+				"startFunc": "BIOS_startFunc",
+				"clockEnabled": "true",
+				"swiEnabled": "true",
+				"taskEnabled": "true"
+			}
+		]
+	}
+]
+
+[
+	{
+		"module": "ti.sysbios.BIOS",
+		"view": "Module"
+	},
+	{
+		"elements": [
+			{
+				"currentThreadType": "Main",
+				"rtsGateType": "GateMutex",
+				"cpuFreqLow": "48000000",
+				"cpuFreqHigh": "0",
+				"disableClock": null,
+				"disableSwi": null,
+				"disableTask": null,
+				"startFunc": "BIOS_startFunc",
+				"clockEnabled": "true",
+				"swiEnabled": "true",
+				"taskEnabled": "true"
+			}
+		]
+	}
+]
+
+[
+	{
+		"module": "ti.sysbios.knl.Task",
+		"view": "Detailed"
+	},
+	{}
+]
+
+[
+	{
+		"module": "ti.sysbios.knl.Clock",
+		"view": "Basic"
+	},
+	{}
+]
+
+[
+	{
+		"module": "ti.sysbios.gates.GateMutex",
+		"view": "Basic"
+	},
+	{}
+]
+
+[
+	{
+		"module": "ti.sysbios.heaps.HeapMin",
+		"view": "Basic"
+	},
+	{}
+]
+
+[
+	{
+		"view": "CPU Graph"
+	},
+	{
+		"x": [],
+		"y": []
+	}
+]
+
