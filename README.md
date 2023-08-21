@@ -108,22 +108,14 @@ Let's visualize this interaction using the following flowcharts:
 </div>
 
 
-  <h2>Flowchart for task_uart0_printu_print Function</h2>
-<div class="mermaid">
-  graph TD
-    A[Start] -->|Wait for sem_print_queue_add| B[If queue has elements]
-    B -->|Copy element from queue| C[Acquire psem_uart0]
-    C -->|Initialize and send data| D[Close UART and release psem_uart0]
-    D -->|Release sem_print_queue_add| E[Loop back]
-    
-    classDef shared-element fill:#40E0D0;
-    class B shared-element;
-    class D shared-element;
-</div>
-
-</body>
-</html>
-
+ ##### Flowchart for task_uart0_printu_print Function
+```mermaid
+flowchart LR
+    A[Start] -->|Wait for sem_print_queue_add| B[If queue has elements];
+    B -->|Copy element from queue| C[Acquire psem_uart0];
+    C -->|Initialize and send data| D[Close UART and release psem_uart0];
+    D -->|Release sem_print_queue_add| E[Loop back];
+```
 
 
 #### GPS Data Acquisition Task
