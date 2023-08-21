@@ -1,6 +1,24 @@
-Welcome to the documentation for the firmware component of my master's thesis. This README provides an in-depth understanding of the firmware's design principles, functionalities, and their impact on power consumption.
+This repository features the firmware codes associated with the design of a family of devices created for
 
-## Table of Contents
+## Platorm
+
+* Hardware: Custom printed circuit board featuring the Texas Instruments CC1312R1 System on Chip.
+  * Radio Communication: 150 MHz band, 2-GFSK modulation. The radio is included inside the CC1312R1 chip.
+  * Sensors:  
+    * IMU: Temperature + Accelerometer + Gyroscope + Magnetometer.
+    * GPS receptor U-blox NEO 7M: Position.
+  * Lights: 3 leds
+  * Battery: LiPo 3.7V-600mAh.
+  * Battery Charger: USB-B micro. 
+  * SD Slot: Allow the acquired information from sensors to be stored in the SD CARD.
+* Firmware and SDK:
+  * IDE: Code Composer Studio Version 11.1
+  * SDK: [Simple Link SDK Version 6.30](https://www.ti.com/tool/download/SIMPLELINK-CC13XX-CC26XX-SDK/6.30.01.03)
+  * Compiler: TI Clang Version 2.1
+* Software:
+  * Decoder: Python. Convert binary information stored in the SD card to human readable information.
+  
+## Firmware features: Table of Contents
 
 - [Modular Design and Scalability](#modular-design-and-scalability)
 - [State Machine and Task Activation Modes](#state-machine-and-task-activation-modes)
