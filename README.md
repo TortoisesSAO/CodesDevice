@@ -154,57 +154,22 @@ The GPS data acquisition task coordinates with a state machine, ensuring proper 
 
 Overall, this GPS data acquisition task demonstrates a well-structured approach to interfacing with GPS modules, parsing data, and managing acquired information within an RTOS environment.
 
-#### Diagrams
-
-<script type="module">
-  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
-  mermaid.initialize({ startOnLoad: true });
-</script>
-
-<style>
-  .shared-element {
-      #40E0D0; /* Turquoise color */
-  }
-</style>
-
-
-
-<!DOCTYPE html>
-<html>
-<head>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.css">
-  <script type="module">
-    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
-    mermaid.initialize({ startOnLoad: true });
-  </script>
-</head>
-<body>
-  <div class="mermaid">
-    flowchart LR
-      subgraph GPS Data Acquisition Task
-        InitializeGPS --> ParseGPSData --> StoreData --> PassDataToRFModule --> CheckGPSAcquired
-      end
-
-      InitializeGPS -->|Start| ParseGPSData
-      ParseGPSData -->|Success| StoreData
-      StoreData -->|Continue| PassDataToRFModule
-      PassDataToRFModule -->|Continue| CheckGPSAcquired
-      CheckGPSAcquired -->|Yes| ParseGPSData
-      CheckGPSAcquired -->|No| Stop
-
-      subgraph CheckGPSAcquired
-        style CheckGPSAcquired fill:#f9f,stroke:#333,stroke-width:2px
-        Yes((Yes))
-        No((No))
-      end
-  </div>
-</body>
-</html>
-
+#### GPS task Diagrams
 ```mermaid
-  graph TD;
-      A-->B;
-      A-->C;
-      B-->D;
-      C-->D;
-```
+flowchart LR
+    subgraph GPS Data Acquisition Task
+    InitializeGPS --> ParseGPSData --> StoreData --> PassDataToRFModule --> CheckGPSAcquired
+    end
+
+    InitializeGPS -->|Start| ParseGPSData
+    ParseGPSData -->|Success| StoreData
+    StoreData -->|Continue| PassDataToRFModule
+    PassDataToRFModule -->|Continue| CheckGPSAcquired
+    CheckGPSAcquired -->|Yes| ParseGPSData
+    CheckGPSAcquired -->|No| Stop
+
+    subgraph CheckGPSAcquired
+    style CheckGPSAcquired fill:#f9f,stroke:#333,stroke-width:2px
+    Yes((Yes))
+    No((No))
+    end
