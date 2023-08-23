@@ -4,7 +4,7 @@ This repository features the firmware codes associated with the design of a fami
 The platform used for acquisition is composed of an MD (Monitoring device), which is custom hardware that must be attached to the Animal in order to acquire the information used for animal behaviour research. Also, other devices are used in order to support the MD. These devices allow the user to gather Radio Frequency data sent by MD in order to allow a range monitoring of the device status and help the recovery of the attached MD.
 * Hardware: Custom printed circuit board featuring the Texas Instruments CC1312R1 System on Chip.
   * Radio Communication: 150 MHz band, 2-GFSK modulation. The radio is included inside the CC1312R1 chip and send two kind of messages:
-  *  Keep Alive Pulses: Short pulses with low information.
+  **  Keep Alive Pulses: Short pulses with no information. By using a Tracking Device (TD)
   * Sensors:  
     * IMU: Temperature + Accelerometer + Gyroscope + Magnetometer.
     * GPS receptor U-blox NEO 7M: Position.
@@ -62,6 +62,8 @@ The firmware's modular design, scalability, state machine operation, and power c
 
 For detailed implementation guidelines and real-world use cases, consult the comprehensive documentation within the repository.
 
+# FAQ
+# There is only One firmware code and device board, how I select my device application?
 # tasks
 
 #### Interaction Between `printuf` and `task_uart0_printu_print` Tasks
