@@ -1,13 +1,14 @@
-This repository features the firmware codes associated with the design of a family of devices created for
+This repository features the firmware codes associated with the design of a family of devices created to monitor animal behaviour. These designs are applied to the monitor of the tortoise species ["Chelonoidis chilensis"](https://en.wikipedia.org/wiki/Chaco_tortoise). The goal of this device family is to allow the interdisciplinary research group to gather data from each tortoise (like temperature and position) and then use this information to find behaviour patterns with the aim of empowering politics in order  to improve the preservation of this species.
 
 ## Platorm
-
+The platform used for acquisition is composed of an MD (Monitoring device), which is custom hardware that must be attached to the Animal in order to acquire the information used for animal behaviour research. Also, other devices are used in order to support the MD. These devices allow the user to gather Radio Frequency data sent by MD in order to allow a range monitoring of the device status and help the recovery of the attached MD.
 * Hardware: Custom printed circuit board featuring the Texas Instruments CC1312R1 System on Chip.
-  * Radio Communication: 150 MHz band, 2-GFSK modulation. The radio is included inside the CC1312R1 chip.
+  * Radio Communication: 150 MHz band, 2-GFSK modulation. The radio is included inside the CC1312R1 chip and send two kind of messages:
+  *  Keep Alive Pulses: Short pulses with low information.
   * Sensors:  
     * IMU: Temperature + Accelerometer + Gyroscope + Magnetometer.
     * GPS receptor U-blox NEO 7M: Position.
-  * Lights: 3 leds
+  * Lights: 3 LEDs
   * Battery: LiPo 3.7V-600mAh.
   * Battery Charger: USB-B micro. 
   * SD Slot: Allow the acquired information from sensors to be stored in the SD CARD.
@@ -17,7 +18,9 @@ This repository features the firmware codes associated with the design of a fami
   * Compiler: TI Clang Version 2.1
 * Software:
   * Decoder: Python. Convert binary information stored in the SD card to human readable information.
-  
+In order to perform the reception of the
+* TD: Tracking Device
+* DCS: Data Collection Station
 ## Firmware features: Table of Contents
 
 - [Modular Design and Scalability](#modular-design-and-scalability)
