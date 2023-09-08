@@ -1,7 +1,7 @@
 # Presentation
 This repository features the firmware codes associated with the design of a family of devices created to monitor animal behaviour. These designs are applied to the monitor of the tortoise species ["Chelonoidis chilensis"](https://en.wikipedia.org/wiki/Chaco_tortoise). The goal of this device family is to allow the interdisciplinary research group to gather data from each tortoise (like temperature and position) and then use this information to find behaviour patterns with the aim of empowering politics in order  to improve the preservation of this species. \
 You can find more information in this paper: [Design and Development of a Family of Integrated Devices to Monitor Animal Movement in the Wild ](https://www.mdpi.com/1424-8220/23/7/3684) \
-Additional works regarding this research topic can be also found in the following protect: [Study of animal movement: equipment design and development](https://www.hackster.io/471203/study-of-animal-movement-equipment-design-and-development-febb17) 
+Additional works regarding this research topic can be also found in the following project: [Study of animal movement: equipment design and development](https://www.hackster.io/471203/study-of-animal-movement-equipment-design-and-development-febb17) 
 
 ## Introduction
 
@@ -15,7 +15,7 @@ In the next figure, the illustration shows the interaction between the different
 ## Platorm
 The platform used for acquisition is composed of an MD (Monitoring device), which is custom hardware that must be attached to the Animal in order to acquire the information used for animal behaviour research. Also, other devices are used in order to support the MD. These devices allow the user to gather Radio Frequency data sent by MD in order to allow a range monitoring of the device status and help the recovery of the attached MD.
 * Hardware: Custom printed circuit board featuring the Texas Instruments CC1312R1 System on Chip.
-  * Radio Communication: 150 MHz band, 2-GFSK modulation. The radio is included inside the CC1312R1 chip and send two kind of messages:
+  * Radio Communication: 150 MHz band, 2-GFSK modulation. The radio is included inside the CC1312R1 chip and sends two kind of messages:
   **  Keep Alive Pulses: Short pulses with no information. By using a Tracking Device (TD)
   * Sensors:  
     * IMU: Temperature + Accelerometer + Gyroscope + Magnetometer.
@@ -48,13 +48,13 @@ The scalable architecture ensures that the firmware accommodates future enhancem
 
 ## State Machine and Task Activation Modes
 
-The firmware employs a state machine model to manage the device's behavior. It operates in different modes, each optimized for specific scenarios:
+The firmware employs a state machine model to manage the device's behaviour. It operates in different modes, each optimized for specific scenarios:
 
 1. **Normal Mode:** This mode includes a set of tasks actively engaged based on the device's intended operation. For instance, during standard data collection, sensor tasks and communication modules are active.
 
 2. **Low-Power Mode:** In situations where continuous operation isn't necessary, the system can transition to a low-power state. Unnecessary tasks are suspended, reducing power consumption while maintaining essential functionalities like periodic activity monitoring.
 
-3. **Animal Behavior-Dependent Mode:** To optimize power usage further, the firmware monitors animal behavior and adjusts its operation accordingly. If the animal remains inactive for a specified duration, non-critical tasks are suspended, and the device enters a sleep state. This feature minimizes energy consumption during periods of inactivity.
+3. **Animal Behavior-Dependent Mode:** To optimize power usage further, the firmware monitors animal behaviour and adjusts its operation accordingly. If the animal remains inactive for a specified duration, non-critical tasks are suspended, and the device enters a sleep state. This feature minimizes energy consumption during periods of inactivity.
 
 ## Power Consumption Optimization
 
@@ -75,12 +75,12 @@ The firmware's modular design, scalability, state machine operation, and power c
 For detailed implementation guidelines and real-world use cases, consult the comprehensive documentation within the repository.
 
 # FAQ
-# There is only One firmware code and device board, how I select my device application?
+# There is only One firmware code and device board, how do I select my device application?
 # tasks
 
 #### Interaction Between `printuf` and `task_uart0_printu_print` Tasks
 
-In complex software systems, tasks often need to communicate and synchronize their actions to achieve coordinated behavior. Let's explore the interaction between two tasks, `printuf` and `task_uart0_printu_print`, in the context of printing and UART communication.
+In complex software systems, tasks often need to communicate and synchronize their actions to achieve coordinated behaviour. Let's explore the interaction between two tasks, `printuf` and `task_uart0_printu_print`, in the context of printing and UART communication.
 
 ##### Task Descriptions
 
