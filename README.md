@@ -3,7 +3,7 @@ This repository features the firmware codes associated with the design of a fami
 
 <img src="./pictures/intro_tortuga_prototipo.png" width=35% align="right"> 
 
-#### You can find more information in this paper: 
+#### You can find more information regarding the design criterias and software architecture in this paper: 
 [Design and Development of a Family of Integrated Devices to Monitor Animal Movement in the Wild ](https://www.mdpi.com/1424-8220/23/7/3684) 
 
 #### In the following awarded project there are additional works related to this research topic: 
@@ -40,12 +40,17 @@ In the next figure, the illustration shows the interaction between the different
 
 ## Platorm
 The platform used for acquisition is composed of an MD (Monitoring device), which is custom hardware that must be attached to the Animal in order to acquire the information used for animal behaviour research. Also, other devices are used in order to support the MD. These devices allow the user to gather Radio Frequency data sent by MD in order to allow a range monitoring of the device status and help the recovery of the attached MD.
+
+<img src="./pictures/hardware_pcb_schematic.png" width=100% align="center"> 
+
 * Hardware: Custom printed circuit board featuring the Texas Instruments CC1312R1 System on Chip.
-  * Radio Communication: 150 MHz band, 2-GFSK modulation. The radio is included inside the CC1312R1 chip and sends two kind of messages:
+  * Radio Communication: 150 MHz band, 2-GFSK modulation. The radio is included inside the CC1312R1 chip and sends two kinds of messages:
   **  Keep Alive Pulses: Short pulses with no information. By using a Tracking Device (TD)
   * Sensors:  
     * IMU: Temperature + Accelerometer + Gyroscope + Magnetometer.
     * GPS receptor U-blox NEO 7M: Position.
+    * Light sensor (!!!NOT PROGRAMMED IN THE FIRMWARE)
+    * Microphone  (!!!NOT PROGRAMMED IN THE FIRMWARE)
   * Lights: 3 LEDs
   * Battery: LiPo 3.7V-600mAh.
   * Battery Charger: USB-B micro. 
@@ -70,9 +75,13 @@ The firmware embraces a modular design, which facilitates maintainability and sc
 
 The scalable architecture ensures that the firmware accommodates future enhancements and modifications without requiring a complete overhaul. New sensor tasks, communication protocols, or data processing methods can be integrated smoothly, making the system adaptable to evolving requirements.
 
+<img src="./pictures/firmware_rtos.png" width=80% align="center"> 
+
 ## State Machine and Task Activation Modes
 
-The firmware employs a state machine model to manage the device's behaviour. It operates in different modes, each optimized for specific scenarios:
+<img src="./pictures/firmware_state_machine.png" width=60% align="right"> 
+
+The firmware employs a state machine model to manage the device's behaviour. At the same time, the use of an animal behaviour detection engine allows the system to be run in different power modes, outside of the ones listed in the state machine :
 
 1. **Normal Mode:** This mode includes a set of tasks actively engaged based on the device's intended operation. For instance, during standard data collection, sensor tasks and communication modules are active.
 
@@ -101,11 +110,14 @@ For detailed implementation guidelines and real-world use cases, consult the com
 # FAQ
 
 ## There is only One firmware code and device board, how do I select my device application?
+### Hardware selection
 
-In the case of the hardware, you must add
+In the case of the hardware, you must add the required components listed in the paper in order to define your kind of device (MD, DCS or TD)
+
+<img src="./pictures/hardware_bloques_posicion.png" width=70% align="center"> 
 
 ### Firmware selection
-In the case of the firmware, there is a series of macros created in order to allow the user select the different devices modes
+In the case of the firmware, there is a series of macros created in order to allow the user to select the different device (MD, DCS or TD) and animal to monitor (lizard of toroise).
 In order to do so, you must edit the `DEVICE_SYSTEM_CONFIG.h` header file, which contains various configuration settings and macros that allow you to customize the behavior of your device and system.
 
 #### Animal and Device Kind Selection
@@ -155,16 +167,6 @@ There are commented-out lines in the file that define specific test modes. These
 
 # Example of Tasks Behaivour
 
-#### Interaction Between `printuf` and `task_uart0_printu_print` Tasks
-
-In complex software systems, tasks often need to communicate and synchronize their actions to achieve coordinated behaviour. Let's explore the interaction between two tasks, `printuf` and `task_uart0_printu_print`, in the context of printing and UART communication.
-
-##### Task Descriptions
-
-- **printuf Function**: The `printuf` function handles formatted printing, acquiring a semaphore to add data to the print queue. It formats the input string, appends it to the queue if space is available, and signals the `task_uart0_printu_print` task to print.
-
-- **task_uart0_printu_print Function**: The `task_uart0_printu_print` task waits for a semaphore indicating data availability in the print queue. When data is present, it extracts and sends the data over UART, ensuring synchronization with UART access.
-
 #### GPS Data Acquisition Task
 
 The provided code snippet represents a GPS data acquisition task designed to run within an RTOS environment. This task is responsible for interfacing with a GPS module, parsing incoming GPS data, and storing the acquired information in memory. The task demonstrates a comprehensive flow that encompasses GPS module interaction, data parsing, storage management, and interaction with other parts of the system.
@@ -207,3 +209,15 @@ flowchart LR
     Yes((Yes))
     No((No))
     end
+```
+
+#### Interaction Between `printuf` and `task_uart0_printu_print` Tasks
+
+In complex software systems, tasks often need to communicate and synchronize their actions to achieve coordinated behaviour. Let's explore the interaction between two tasks, `printuf` and `task_uart0_printu_print`, in the context of printing and UART communication.
+
+##### Task Descriptions
+
+- **printuf Function**: The `printuf` function handles formatted printing, acquiring a semaphore to add data to the print queue. It formats the input string, appends it to the queue if space is available, and signals the `task_uart0_printu_print` task to print.
+
+- **task_uart0_printu_print Function**: The `task_uart0_printu_print` task waits for a semaphore indicating data availability in the print queue. When data is present, it extracts and sends the data over UART, ensuring synchronization with UART access.
+
