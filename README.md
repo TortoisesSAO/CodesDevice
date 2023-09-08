@@ -37,6 +37,7 @@ The platform used for acquisition is composed of an MD (Monitoring device), whic
 - [State Machine and Task Activation Modes](#state-machine-and-task-activation-modes)
 - [Power Consumption Optimization](#power-consumption-optimization)
 - [Conclusion](#conclusion)
+- [Firmware selection](#firmware-selection)
 
 ## Modular Design and Scalability
 
@@ -125,9 +126,9 @@ Also, the are other defines that allows you to select diferent parameters relate
 
 ##### Test Modes
 
-There are commented-out lines in the file that define specific test modes. These modes can be uncommented to enable certain testing behaviors for the device
+There are commented-out lines in the file that define specific test modes. These modes can be uncommented to enable certain testing mode for the device in order to help debugging.
 
-# tasks
+# Example of Tasks Behaivour
 
 #### Interaction Between `printuf` and `task_uart0_printu_print` Tasks
 
@@ -171,13 +172,8 @@ Overall, this GPS data acquisition task demonstrates a well-structured approach 
 ```mermaid
 flowchart LR
     subgraph GPS Data Acquisition Task
-    InitializeGPS --> ParseGPSData --> StoreData --> PassDataToRFModule --> CheckGPSAcquired
+    InitializeGPS -->|Start| ParseGPSData --> StoreData --> PassDataToRFModule --> CheckGPSAcquired
     end
-
-    InitializeGPS -->|Start| ParseGPSData
-    ParseGPSData -->|Success| StoreData
-    StoreData -->|Continue| PassDataToRFModule
-    PassDataToRFModule -->|Continue| CheckGPSAcquired
     CheckGPSAcquired -->|Yes| ParseGPSData
     CheckGPSAcquired -->|No| Stop
 
