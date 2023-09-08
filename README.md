@@ -55,7 +55,7 @@ The platform used for acquisition is composed of an MD (Monitoring device), whic
   * Battery: LiPo 3.7V-600mAh.
   * Battery Charger: USB-B micro. 
   * SD Slot: Allow the acquired information from sensors to be stored in the SD CARD.
-* Firmware and SDK:
+* Firmware and SDK: For programming the CC1312R SoC
   * IDE: Code Composer Studio Version 11.1
   * SDK: [Simple Link SDK Version 6.30](https://www.ti.com/tool/download/SIMPLELINK-CC13XX-CC26XX-SDK/6.30.01.03)
   * Compiler: TI Clang Version 2.1
