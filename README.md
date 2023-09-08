@@ -75,7 +75,60 @@ The firmware's modular design, scalability, state machine operation, and power c
 For detailed implementation guidelines and real-world use cases, consult the comprehensive documentation within the repository.
 
 # FAQ
-# There is only One firmware code and device board, how do I select my device application?
+
+## There is only One firmware code and device board, how do I select my device application?
+
+In the case of the hardware, you must add
+
+### Firmware selection
+In the case of the firmware, there is a series of macros created in order to allow the user select the different devices modes
+In order to do so, you must edit the `DEVICE_SYSTEM_CONFIG.h` header file, which contains various configuration settings and macros that allow you to customize the behavior of your device and system.
+
+#### Animal and Device Kind Selection
+
+In this section, you can define unique identifiers for different animal types or applications and types of monitoring devices. These identifiers are used throughout your code to specify the device's purpose and kind of animal being monitored. \
+Options \
+```c
+#define ANIMAL_TORTOISE_SAO 48488448468
+#define ANIMAL_LIZARD 48986556565
+
+#define DEVICE_TYPE_MD 488685535  // Monitoring device
+#define DEVICE_TYPE_TD 89198568   // Tracking device
+#define DEVICE_TYPE_DCS 48488848  // Data Collector Station
+```
+Example of selection \
+```c
+#define DEVICE_TYPE_KIND DEVICE_TYPE_MD
+#define DEVICE_TYPE_ANIMAL ANIMAL_TORTOISE_SAO
+```
+#### System Configuration
+
+Also, the are other defines that allows you to select diferent parameters related to the general : 
+
+    * UART Printing: RTOS_PRINTU controls whether UART print functions are enabled.
+
+    * SD Card Storage: SD_STORAGE_ON enables or disables SD card storage for collected data.
+
+    * Development Board: DEVELOPMENT_BOARD_EMPTY can bypass most functions when using a development board  of SoC CC1312R that does not have the custom hardware specific sensors that are required for the normal RUN of the device.
+
+    * LED Configuration: Customize LED tilting duration and period.
+
+    * IMU Sensors: Set accelerometer and gyroscope sample rates.
+
+    * Magnetometer Sensor: Configure the magnetometer sample rate.
+
+    * Animal Activity Detection: Enables the detection and inclusion of animal activity (specific to certain devices and animals). You can also enable differents power modes based of animal activity detection (for example, turning off gyroscope to save power).
+
+    * GPS Setup: Configure GPS data collection and acquisition settings.
+
+    * RF Setup: Define radio transmission parameters such as power levels, frequencies, and transmission periods.
+
+    * Battery-Related Parameters: Configure battery levels and charging settings based on the type of battery used in your project.
+
+##### Test Modes
+
+There are commented-out lines in the file that define specific test modes. These modes can be uncommented to enable certain testing behaviors for the device
+
 # tasks
 
 #### Interaction Between `printuf` and `task_uart0_printu_print` Tasks
