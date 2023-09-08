@@ -29,10 +29,8 @@ The platform used for acquisition is composed of an MD (Monitoring device), whic
   * SDK: [Simple Link SDK Version 6.30](https://www.ti.com/tool/download/SIMPLELINK-CC13XX-CC26XX-SDK/6.30.01.03)
   * Compiler: TI Clang Version 2.1
 * Software:
-  * Decoder: Python. Convert binary information stored in the SD card to human readable information.
-In order to perform the reception of the
-* TD: Tracking Device
-* DCS: Data Collection Station
+  * Decoder: Python. Convert binary information stored in the SD card to human readable information, which are pandas-compatible 
+  * 
 ## Firmware features: Table of Contents
 
 - [Modular Design and Scalability](#modular-design-and-scalability)
@@ -140,53 +138,6 @@ In complex software systems, tasks often need to communicate and synchronize the
 - **printuf Function**: The `printuf` function handles formatted printing, acquiring a semaphore to add data to the print queue. It formats the input string, appends it to the queue if space is available, and signals the `task_uart0_printu_print` task to print.
 
 - **task_uart0_printu_print Function**: The `task_uart0_printu_print` task waits for a semaphore indicating data availability in the print queue. When data is present, it extracts and sends the data over UART, ensuring synchronization with UART access.
-
-##### Interaction Overview
-
-These tasks interact through semaphores to ensure orderly data handling and UART communication. Elements shared between the tasks are marked with a consistent turquoise color for easy identification.
-
-Let's visualize this interaction using the following flowcharts:
-
-##### Flowcharts: 
-
-<style>
-  .shared-element {
-      #40E0D0; /* Turquoise color */
-  }
-</style>
-
-
-<!DOCTYPE html>
-<html>
-<head>
-  <script type="module">
-    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
-    mermaid.initialize({ startOnLoad: true });
-  </script>
-</head>
-<body>
-  <h2>Flowchart for printuf Function</h2>
-<div class="mermaid">
-  graph TD
-    A[Start] -->|Acquire sem_print_queue_add| B[Parse and format input]
-    B -->|Append to queue| C[If queue has space] -->|Release sem_print_queue_add| D[If queue is not empty] -->|Release sem_print_wait| E[End]
-    
-    classDef shared-element fill:#40E0D0;
-    class B shared-element;
-    class C shared-element;
-    class D shared-element;
-</div>
-
-
- ##### Flowchart for task_uart0_printu_print Function
-```mermaid
-flowchart LR
-    A[Start] -->|Wait for sem_print_queue_add| B[If queue has elements];
-    B -->|Copy element from queue| C[Acquire psem_uart0];
-    C -->|Initialize and send data| D[Close UART and release psem_uart0];
-    D -->|Release sem_print_queue_add| E[Loop back];
-```
-
 
 #### GPS Data Acquisition Task
 
