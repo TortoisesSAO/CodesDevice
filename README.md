@@ -1,7 +1,33 @@
 # Presentation
-This repository features the firmware codes associated with the design of a family of devices created to monitor animal behaviour. These designs are applied to the monitor of the tortoise species ["Chelonoidis chilensis"](https://en.wikipedia.org/wiki/Chaco_tortoise). The goal of this device family is to allow the interdisciplinary research group to gather data from each tortoise (like temperature and position) and then use this information to find behaviour patterns with the aim of empowering politics in order  to improve the preservation of this species. \
-You can find more information in this paper: [Design and Development of a Family of Integrated Devices to Monitor Animal Movement in the Wild ](https://www.mdpi.com/1424-8220/23/7/3684) \
-Additional works regarding this research topic can be also found in the following project: [Study of animal movement: equipment design and development](https://www.hackster.io/471203/study-of-animal-movement-equipment-design-and-development-febb17) 
+This repository features the firmware codes associated with the design of a family of devices created to monitor animal behaviour. These designs are applied to the monitor of the tortoise species ["Chelonoidis chilensis"](https://en.wikipedia.org/wiki/Chaco_tortoise). The goal of this device family is to allow the interdisciplinary research group to gather data from each tortoise (like temperature, position and movement-related data like acceleration) and then use this information to find behaviour patterns with the aim of empowering politics in order to improve the preservation of this species. 
+
+<img src="./pictures/intro_tortuga_prototipo.png" width=35% align="right"> 
+
+#### You can find more information in this paper: 
+[Design and Development of a Family of Integrated Devices to Monitor Animal Movement in the Wild ](https://www.mdpi.com/1424-8220/23/7/3684) 
+
+#### In the following awarded project there are additional works related to this research topic: 
+[Study of animal movement: equipment design and development](https://www.hackster.io/471203/study-of-animal-movement-equipment-design-and-development-febb17) 
+
+&nbsp;
+
+&nbsp;
+
+###     Monitoring device: 3D model (Left)   <<--------------------------->>(Right) physical implementation 
+<img src="./pictures/hardware_pcb_3d.png" width=45% align="left"> 
+
+<img src="./pictures/results_device_all.png" width=50% align="right"> 
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
 
 ## Introduction
 
@@ -30,7 +56,6 @@ The platform used for acquisition is composed of an MD (Monitoring device), whic
   * Compiler: TI Clang Version 2.1
 * Software:
   * Decoder: Python. Convert binary information stored in the SD card to human readable information, which are pandas-compatible 
-  * 
 ## Firmware features: Table of Contents
 
 - [Modular Design and Scalability](#modular-design-and-scalability)
