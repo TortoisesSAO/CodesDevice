@@ -3,10 +3,10 @@ This repository features the firmware codes associated with the design of a fami
 
 <img src="./pictures/intro_tortuga_prototipo.png" width=35% align="right"> 
 
-#### You can find more information regarding the design criterias and software architecture in this paper: 
+### You can find more information regarding the design criterias and software architecture in this paper: 
 [Design and Development of a Family of Integrated Devices to Monitor Animal Movement in the Wild ](https://www.mdpi.com/1424-8220/23/7/3684) 
 
-#### In the following awarded project there are additional works related to this research topic: 
+### In the following awarded project there are additional works related to this research topic: 
 [Study of animal movement: equipment design and development](https://www.hackster.io/471203/study-of-animal-movement-equipment-design-and-development-febb17) 
 
 &nbsp;
