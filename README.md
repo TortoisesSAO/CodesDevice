@@ -103,13 +103,13 @@ The firmware's design, state machine operation, and task activation modes direct
 
 ## Conclusion
 
-The firmware's modular design, scalability, state machine operation, and power consumption optimization collectively contribute to a robust and adaptable system. The ability to tailor the device's behavior based on task activation and animal behavior not only ensures efficient energy usage but also enhances the overall reliability and longevity of the device's operation.
+The firmware's modular design, scalability, state machine operation, and power consumption optimization collectively contribute to a robust and adaptable system. The ability to tailor the device's behaviour based on task activation and animal behaviour not only ensures efficient energy usage but also enhances the overall reliability and longevity of the device's operation.
 
-For detailed implementation guidelines and real-world use cases, consult the comprehensive documentation within the repository.
+For detailed implementation guidelines and real-world use cases, you can use the comprehensive documentation within the repository.
 
 # FAQ
 
-## There is only One firmware code and device board, how do I select my device application?
+## There is only One firmware code and device board, How do I select my device application?
 ### Hardware selection
 
 In the case of the hardware, you must add the required components listed in the paper in order to define your kind of device (MD, DCS or TD)
@@ -117,12 +117,12 @@ In the case of the hardware, you must add the required components listed in the 
 <img src="./pictures/hardware_bloques_posicion.png" width=70% align="center"> 
 
 ### Firmware selection
-In the case of the firmware, there is a series of macros created in order to allow the user to select the different device (MD, DCS or TD) and animal to monitor (lizard of toroise).
-In order to do so, you must edit the `DEVICE_SYSTEM_CONFIG.h` header file, which contains various configuration settings and macros that allow you to customize the behavior of your device and system.
+In the case of the firmware, there is a series of macros created in order to allow the user to select the different devices (MD, DCS or TD) and animals to monitor (lizard of tortoise).
+In order to do so, you must edit the `DEVICE_SYSTEM_CONFIG.h` header file, which contains various configuration settings and macros that allow you to customize the behaviour of your device and system.
 
 #### Animal and Device Kind Selection
 
-In this section, you can define unique identifiers for different animal types or applications and types of monitoring devices. These identifiers are used throughout your code to specify the device's purpose and kind of animal being monitored. \
+In this section, you can define unique identifiers for different animal types or applications and types of monitoring devices. These identifiers are used throughout your code to specify the device's purpose and the kind of animal being monitored. \
 Options \
 ```c
 #define ANIMAL_TORTOISE_SAO 48488448468
@@ -139,7 +139,7 @@ Example of selection \
 ```
 #### System Configuration
 
-Also, the are other defines that allows you to select diferent parameters related to the general : 
+Also, there are other defines that allow you to select different parameters related to the general functionalities of the device: 
 
     * UART Printing: RTOS_PRINTU controls whether UART print functions are enabled.
 
